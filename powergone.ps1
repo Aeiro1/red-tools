@@ -1,7 +1,7 @@
 $win = $PID
 
 while ($true) {
-    $others = Get-Process powershell | Where-Obeject {$_.Id -ne $win}
+    $others = Get-Process powershell | Where-Object {$_.Id -ne $win}
     foreach ($process in $others) {
         $process.Kill()
     }
